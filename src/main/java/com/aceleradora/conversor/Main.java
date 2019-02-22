@@ -1,12 +1,12 @@
 package com.aceleradora.conversor;
 
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
 public class Main {
 
-    public String getGreeting() {
-        return "Oi, mundo";
-    }
-
     public static void main(String[] args) {
-        System.out.println(new Main().getGreeting());
+        SpringApplication.run(Main.class, args);
     }
 }
