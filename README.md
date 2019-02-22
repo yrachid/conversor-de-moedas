@@ -1,5 +1,40 @@
 # Conversor de Moedas
 
+## Dicas
+
+Existem dicas que ajudarão a resolver algumas das etapas. As dicas de cada etapa estarão em branches separadas. Para ver as dicas disponíveis, execute:
+
+```bash
+git branch -v
+```
+
+Para ver mais detalhes das dicas, primeiro, faça checkout para o branch que contém as dicas referentes a alguma versão:
+
+```bash
+git checkout dicas/terceira-versao
+```
+
+Depois, veja a lista de dicas disponíveis:
+
+```bash
+git log --oneline | grep dica
+```
+
+Cada dica da lista possui um hash de commit (os números e letras estranhos no começo de cada linha):
+
+```bash
+f2d0421 dica: Inicializa aplicacao Spring
+07a25e6 dica: Adiciona dependencias Spring
+```
+
+Para ver uma dica em detalhe, execute `git show` passando o hash da dica:
+
+```bash
+git show f2d0421
+```
+
+## O Problema
+
 O padrão [ISO-4217](https://en.wikipedia.org/wiki/ISO_4217#Active_codes) estipula códigos de três letras para representar moedas. Por exemplo:
 
 - Reais brasileiros: `BRL`
