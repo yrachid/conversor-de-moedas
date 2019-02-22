@@ -21,7 +21,7 @@ USD100 BRL
 
 Saída:
 ```
-BRL300
+BRL374.70
 ```
 
 __Regras de negócio__
@@ -34,6 +34,7 @@ Você escolhe se quer utilizar taxas de cambio reais ou fictícias. Caso queira 
 __Orientação a objetos__
 
 Para tentar praticar um pouco mais de Java e Orientação a Objetos, pense em como implementar esta versão utilizando as seguintes classes:
+- Main
 - Conversor
 - Enum moeda
 - Taxa de cambio
@@ -45,25 +46,37 @@ _Esta ideia não é obrigatória, é apenas uma sugestão._
 
 Permite que o usuário converta um valor para múltiplas moedas ao mesmo tempo
 
-Entrada
+Entrada:
 
 ```
-
+USD100 BRL CLP
 ```
 
-_Terceira versão:_
+Saída:
 
-Transforme o conversor implementado na primeira versão em uma aplicação web, que possa ser utilizada através de um browser. Nesta versão, ainda não precisamos pensar em formulários ou páginas HTML.
+```
+BRL374.70 CLP65113.50
+```
 
-Implemente esta versão usando Spring. Crie um projeto.
+### Terceira versão
+
+Transforme o conversor implementado nas versões anteriores em uma aplicação web, que possa ser utilizada através de um browser. Nesta versão, ainda não precisamos pensar em formulários ou páginas HTML.
+
+Implemente esta versão usando Spring.
 
 Crie uma rota que recebe três parâmetros:
 - `valor`: valor a ser convertido
-- `de`: moeda original
-- `para`: moeda para qual se quer converter o valor
+- `para`: moedas para as quaus se quer converter o valor
 
 Exemplo de uso:
 
-Quando o usuário acessar no browser a url `localhost:8080/converter?de=USD&para=BRL&valor=10`
+Quando o usuário acessar no browser a url `localhost:8080/converter?valor=USD100&moedas=BRL,CLP`
 
-A aplicação deve mostrar no browser o valor resultante da conversão. Não precisa usar HTML, basta exibir o valor.
+A aplicação deve mostrar no browser os resultados das conversões:
+
+```
+BRL374.70
+CLP65113.50
+```
+
+Não é necessário usar HTML, basta exibir o valor em texto simples.
