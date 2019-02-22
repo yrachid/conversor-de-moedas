@@ -1,11 +1,28 @@
+buildscript {
+
+    dependencies {
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:2.0.4.RELEASE'
+    }
+
+    repositories {
+        jcenter()
+    }
+}
+
 plugins {
     id 'java'
     id 'application'
 }
 
-mainClassName = 'App'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+mainClassName = 'com.aceleradora.conversor.Main'
 
 dependencies {
+
+    compile 'org.springframework.boot:spring-boot-starter-web:2.0.4.RELEASE'
+
     testCompile 'junit:junit:4.12'
 }
 
