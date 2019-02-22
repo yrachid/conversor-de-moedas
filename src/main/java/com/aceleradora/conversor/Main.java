@@ -1,12 +1,17 @@
 package com.aceleradora.conversor;
 
+import java.util.Scanner;
+
 public class Main {
 
-    public String getGreeting() {
-        return "Oi, mundo";
-    }
-
     public static void main(String[] args) {
-        System.out.println(new Main().getGreeting());
+
+        Scanner leitor = new Scanner(System.in);
+
+        System.out.print("Digite Algo: ");
+        String entrada = leitor.nextLine();
+
+        System.out.println(entrada);
+
     }
 }
