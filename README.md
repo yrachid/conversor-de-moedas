@@ -35,6 +35,8 @@ git show f2d0421
 
 ## O Problema
 
+Este exercício consistem em implementar uma aplicação que consiga converter valores de uma moeda para outra. Por exemplo, converter 10 Reais para Dólares.
+
 O padrão [ISO-4217](https://en.wikipedia.org/wiki/ISO_4217#Active_codes) estipula códigos de três letras para representar moedas. Por exemplo:
 
 - Reais brasileiros: `BRL`
