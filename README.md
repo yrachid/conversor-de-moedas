@@ -64,7 +64,7 @@ Transforme o conversor implementado nas versões anteriores em uma aplicação w
 
 Implemente esta versão usando Spring.
 
-Crie uma rota que recebe três parâmetros:
+Crie uma rota que recebe os seguintes parâmetros:
 - `valor`: valor a ser convertido
 - `para`: moedas para as quaus se quer converter o valor
 
