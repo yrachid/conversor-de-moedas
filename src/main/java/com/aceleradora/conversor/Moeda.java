@@ -6,15 +6,6 @@ public enum Moeda {
     REAL_BRASILEIRO("BRL"),
     PESO_CHILENO("CLP");
 
-
-
-
-
-
-
-
-
-
     private String codigo;
 
     Moeda(String codigo) {
