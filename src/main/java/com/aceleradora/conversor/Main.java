@@ -1,25 +1,29 @@
 package com.aceleradora.conversor;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        double BRL_CLP = 174.36;
-        double BRL_EUR = 0.24;
-        double BRL_USD = 0.27;
+        final List<TaxaCambio> TAXAS_DISPONIVEIS = Arrays.asList(
+                new TaxaCambio(EnumMoeda.REAL_BRASILEIRO, 174.36, EnumMoeda.PESO_CHILENO),
+                new TaxaCambio(EnumMoeda.REAL_BRASILEIRO, 0.24, EnumMoeda.EURO),
+                new TaxaCambio(EnumMoeda.REAL_BRASILEIRO, 0.27, EnumMoeda.DOLAR_AMERICANO),
 
-        double USD_CLP = 651.43;
-        double USD_EUR = 0.88;
-        double USD_BRL = 3.74;
+                new TaxaCambio(EnumMoeda.DOLAR_AMERICANO, 651.43, EnumMoeda.PESO_CHILENO),
+                new TaxaCambio(EnumMoeda.DOLAR_AMERICANO, 0.88, EnumMoeda.EURO),
+                new TaxaCambio(EnumMoeda.DOLAR_AMERICANO, 3.74, EnumMoeda.REAL_BRASILEIRO),
 
-        double EUR_CLP = 738.98;
-        double EUR_BRL = 4.24;
-        double EUR_USD = 1.13;
+                new TaxaCambio(EnumMoeda.EURO, 738.98, EnumMoeda.PESO_CHILENO),
+                new TaxaCambio(EnumMoeda.EURO, 4.24, EnumMoeda.REAL_BRASILEIRO),
+                new TaxaCambio(EnumMoeda.EURO, 1.13, EnumMoeda.DOLAR_AMERICANO),
 
-        double CLP_EUR = 0.0014;
-        double CLP_USD = 0.0015;
-        double CLP_BRL = 0.0057;
+                new TaxaCambio(EnumMoeda.PESO_CHILENO, 0.0014, EnumMoeda.EURO),
+                new TaxaCambio(EnumMoeda.PESO_CHILENO, 0.0015, EnumMoeda.DOLAR_AMERICANO),
+                new TaxaCambio(EnumMoeda.PESO_CHILENO, 0.0057, EnumMoeda.REAL_BRASILEIRO));
+
 
         Conversor conversor = new Conversor();
         Scanner input = new Scanner(System.in);
