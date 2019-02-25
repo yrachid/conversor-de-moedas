@@ -10,11 +10,11 @@ public class Conversor {
             String codigoMoedaDestino = entrada.substring(indiceEspaco + 1, indiceEspaco + 4);
 
             if (!moedaDisponivel(codigoMoedaOriginal)) {
-                return "Moeda indisponivel: " + codigoMoedaOriginal;
+                return "EnumMoeda indisponivel: " + codigoMoedaOriginal;
             }
 
             if (!moedaDisponivel(codigoMoedaDestino)) {
-                return "Moeda indisponivel: " + codigoMoedaDestino;
+                return "EnumMoeda indisponivel: " + codigoMoedaDestino;
             }
 
             return entrada;
@@ -22,7 +22,7 @@ public class Conversor {
 
         private boolean moedaDisponivel(String codigoMoeda) {
 
-            Moeda[] moedasDisponiveis = Moeda.values();
+            EnumMoeda[] moedasDisponiveis = EnumMoeda.values();
 
             for (int i = 0; i < moedasDisponiveis.length; i++) {
                 if (moedasDisponiveis[i].getCodigo().equals(codigoMoeda)) {
