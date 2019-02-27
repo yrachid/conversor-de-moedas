@@ -1,6 +1,6 @@
 package com.aceleradora.conversor;
 
-public enum EnumMoeda {
+public enum Moeda {
 
     DOLAR_AMERICANO("USD"),
     REAL_BRASILEIRO("BRL"),
@@ -9,7 +9,7 @@ public enum EnumMoeda {
 
     private String codigo;
 
-    EnumMoeda(String codigo) {
+    Moeda(String codigo) {
         this.codigo = codigo;
     }
 

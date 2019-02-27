@@ -22,7 +22,7 @@ public class Conversor {
 
     private boolean moedaDisponivel(String codigoMoeda) {
 
-        EnumMoeda[] moedasDisponiveis = EnumMoeda.values();
+        Moeda[] moedasDisponiveis = Moeda.values();
 
         for (int i = 0; i < moedasDisponiveis.length; i++) {
             if (moedasDisponiveis[i].getCodigo().equals(codigoMoeda)) {

@@ -1,20 +1,20 @@
 package com.aceleradora.conversor;
 public class TaxaCambio {
-    private EnumMoeda moedaDeOrigem;
+    private Moeda moedaDeOrigem;
     private double taxa;
-    private EnumMoeda moedaDeDestino;
+    private Moeda moedaDeDestino;
 
-    public TaxaCambio(EnumMoeda origem, double taxa, EnumMoeda destino) {
+    public TaxaCambio(Moeda origem, double taxa, Moeda destino) {
         this.moedaDeOrigem = origem;
         this.taxa = taxa;
         this.moedaDeDestino = destino;
     }
 
-    public EnumMoeda getMoedaDeOrigem() {
+    public Moeda getMoedaDeOrigem() {
         return moedaDeOrigem;
     }
 
-    public void setMoedaDeOrigem(EnumMoeda moedaDeOrigem) {
+    public void setMoedaDeOrigem(Moeda moedaDeOrigem) {
         this.moedaDeOrigem = moedaDeOrigem;
     }
 
@@ -26,15 +26,15 @@ public class TaxaCambio {
         this.taxa = taxa;
     }
 
-    public EnumMoeda getMoedaDeDestino() {
+    public Moeda getMoedaDeDestino() {
         return moedaDeDestino;
     }
 
-    public void setMoedaDeDestino(EnumMoeda moedaDeDestino) {
+    public void setMoedaDeDestino(Moeda moedaDeDestino) {
         this.moedaDeDestino = moedaDeDestino;
     }
 
-    public boolean servePara(EnumMoeda origem, EnumMoeda destino) {
+    public boolean servePara(Moeda origem, Moeda destino) {
         return moedaDeOrigem == origem && moedaDeDestino == destino;
     }
 
