@@ -17,31 +17,16 @@ public enum Moeda {
         return codigo;
     }
 
-
-
-        public static Moeda valorPorCodigo(String codigoMoeda) throws Exception {
-            for (Moeda moeda : values()) {
-                if (moeda.getCodigo().equals(codigoMoeda)){
-                    return moeda;
-                }
+    public static Moeda valorPorCodigo(String codigoMoeda) throws Exception {
+        for (Moeda moeda : values()) {
+            if (moeda.getCodigo().equals(codigoMoeda)){
+                return moeda;
             }
-            throw new Exception("Moeda não suportada" +  codigoMoeda);
         }
-    public static String validador(String entrada) {
-
-        String codigoMoedaOriginal = entrada.substring(0, 3);
-
-        int indiceEspaco = entrada.indexOf(" ");
-        String codigoMoedaDestino = entrada.substring(indiceEspaco + 1, indiceEspaco + 4);
-
-        if (!moedaDisponivel(codigoMoedaOriginal) && (!moedaDisponivel(codigoMoedaDestino))) {
-            return "EnumMoeda indisponivel: " + codigoMoedaOriginal + codigoMoedaDestino;
-        }
-
-        return entrada;
+        throw new Exception("Moeda não suportada" +  codigoMoeda);
     }
 
-    private static boolean moedaDisponivel(String codigoMoeda) {
+    public static boolean moedaDisponivel(String codigoMoeda) {
 
         Moeda[] moedasDisponiveis = Moeda.values();
 
@@ -53,6 +38,6 @@ public enum Moeda {
 
         return false;
     }
-        }
+}
 
 
