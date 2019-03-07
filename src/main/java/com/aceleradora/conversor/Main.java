@@ -36,7 +36,7 @@ public class Main {
 
         String segundaMoeda = conversor.moedaDestino(entrada);
 
-        double resultado;
+        double resultado = 0;
 
         for (TaxaCambio taxa : TAXAS_DISPONIVEIS){
 
@@ -44,11 +44,11 @@ public class Main {
                 if(segundaMoeda.equalsIgnoreCase(taxa.getMoedaDeDestino().getCodigo())){
                     resultado = valor * taxa.getTaxa();
 
-                    System.out.println(resultado);
+
                 }
             }
-
         }
+        System.out.println(resultado);
     }
 }
 

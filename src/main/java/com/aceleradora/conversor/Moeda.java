@@ -34,12 +34,8 @@ public enum Moeda {
         int indiceEspaco = entrada.indexOf(" ");
         String codigoMoedaDestino = entrada.substring(indiceEspaco + 1, indiceEspaco + 4);
 
-        if (!moedaDisponivel(codigoMoedaOriginal)) {
-            return "EnumMoeda indisponivel: " + codigoMoedaOriginal;
-        }
-
-        if (!moedaDisponivel(codigoMoedaDestino)) {
-            return "EnumMoeda indisponivel: " + codigoMoedaDestino;
+        if (!moedaDisponivel(codigoMoedaOriginal) && (!moedaDisponivel(codigoMoedaDestino))) {
+            return "EnumMoeda indisponivel: " + codigoMoedaOriginal + codigoMoedaDestino;
         }
 
         return entrada;
