@@ -1,7 +1,9 @@
 package com.aceleradora.conversor;
+import java.text.Format;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
+
 
 public class Main {
 
@@ -33,12 +35,26 @@ public class Main {
 
         String primeiraMoeda = conversor.getMoedaEntrada(entrada);
 
-        System.out.println(primeiraMoeda);
 
         double valor = conversor.retornaValor(entrada);
 
-        System.out.println(valor);
+        String[] arrayMoedas = conversor.getMoedasSaida(entrada);
 
+        for (int i = 0; i < arrayMoedas.length; i++) {
+
+            String moedaSaida = arrayMoedas[i];
+
+             TaxaCambio TD = TAXAS_DISPONIVEIS
+                    .stream()
+                    .filter(taxa -> taxa.getMoedaDeOrigem().getCodigo().equalsIgnoreCase(primeiraMoeda) && taxa.getMoedaDeDestino().getCodigo().equalsIgnoreCase(moedaSaida))
+                    .findAny().orElseThrow(null)
+                    ;
+
+                   double resultado = valor * TD.getTaxa();
+
+            System.out.printf("%s %.2f %s %.2f \n",primeiraMoeda, valor, moedaSaida, resultado );
+
+        }
     }
 }
 

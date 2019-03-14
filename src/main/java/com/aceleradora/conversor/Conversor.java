@@ -1,6 +1,5 @@
 package com.aceleradora.conversor;
 
-
 public class Conversor {
 
     public String validador(String entrada) {
@@ -26,4 +25,13 @@ public class Conversor {
         return valorFinal;
     }
 
+    public String[] getMoedasSaida(String entrada) {
+
+        int indiceEspaco = entrada.indexOf(" ");
+        int tamanhoEntrada = entrada.length();
+        String moedas = entrada.substring(indiceEspaco, tamanhoEntrada);
+        String[] arrayMoedas = moedas.trim().split(" ");
+
+        return  arrayMoedas;
+    }
 }
