@@ -1,12 +1,15 @@
 package com.aceleradora.conversor;
 
+import java.util.Scanner;
+
 public class Main {
 
-    public String getGreeting() {
-        return "Oi, mundo";
-    }
-
     public static void main(String[] args) {
-        System.out.println(new Main().getGreeting());
+        Scanner leitoraDeEntrada = new Scanner(System.in);
+
+        System.out.print("> ");
+        String entrada = leitoraDeEntrada.nextLine();
+
+        System.out.println(entrada);
     }
 }
