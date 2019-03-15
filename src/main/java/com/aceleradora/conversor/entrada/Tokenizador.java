@@ -6,7 +6,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
-public class TokenizadorDeEntrada {
+public class Tokenizador {
 
     private static final Pattern PADRAO_ENTRADA = Pattern.compile("(?<moedaOriginal>[A-Z]{3})(?<valor>\\d+\\.?\\d*)\\s(?<moedaSaida>[A-Z]{3})");
 
