@@ -1,11 +1,7 @@
 package com.aceleradora.conversor;
 
+
 public class Conversor {
-
-    public String validador(String entrada) {
-
-        return entrada;
-    }
 
     public String getMoedaEntrada(String entrada){
 
@@ -30,7 +26,7 @@ public class Conversor {
         int indiceEspaco = entrada.indexOf(" ");
         int tamanhoEntrada = entrada.length();
         String moedas = entrada.substring(indiceEspaco, tamanhoEntrada);
-        String[] arrayMoedas = moedas.trim().split(" ");
+        String[] arrayMoedas = moedas.trim().split(",");
 
         return  arrayMoedas;
     }
