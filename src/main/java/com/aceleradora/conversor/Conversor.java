@@ -3,12 +3,15 @@ package com.aceleradora.conversor;
 import com.aceleradora.conversor.entrada.Interpretador;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 import static java.math.RoundingMode.CEILING;
 
 public class Conversor {
 
     private final Interpretador interpretador;
+
+    private static final RoundingMode ARREDONDA_PARA_CIMA = CEILING;
 
     public Conversor(Interpretador interpretador) {
         this.interpretador = interpretador;
@@ -28,6 +31,6 @@ public class Conversor {
 
         BigDecimal taxaDeConversaoDaMoedaDeSaida = conversao.getMoedaDeSaida().getEquivalenciaAoDolarAmericano();
 
-        return valorOriginalEmDolarAmericano.divide(taxaDeConversaoDaMoedaDeSaida, CEILING);
+        return valorOriginalEmDolarAmericano.divide(taxaDeConversaoDaMoedaDeSaida, ARREDONDA_PARA_CIMA);
     }
 }
