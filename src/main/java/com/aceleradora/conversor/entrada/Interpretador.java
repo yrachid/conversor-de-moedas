@@ -3,8 +3,9 @@ package com.aceleradora.conversor.entrada;
 import com.aceleradora.conversor.Conversao;
 import com.aceleradora.conversor.ValorMonetario;
 
+import java.math.BigDecimal;
+
 import static com.aceleradora.conversor.Moeda.porCodigo;
-import static java.lang.Double.parseDouble;
 
 public class Interpretador {
 
@@ -19,7 +20,7 @@ public class Interpretador {
 
         ValorMonetario valorDeEntrada = new ValorMonetario(
                 porCodigo(tokens.getMoedaEntrada()),
-                parseDouble(tokens.getValor()));
+                new BigDecimal(tokens.getValor()));
 
         return new Conversao(
                 valorDeEntrada,

@@ -1,5 +1,6 @@
 package com.aceleradora.conversor;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 public class Conversao {
@@ -10,6 +11,14 @@ public class Conversao {
     public Conversao(ValorMonetario valorDeEntrada, Moeda moedaDeSaida) {
         this.valorDeEntrada = valorDeEntrada;
         this.moedaDeSaida = moedaDeSaida;
+    }
+
+    public BigDecimal getValorEmNuc() {
+       return valorDeEntrada.getValorEmNuc();
+    }
+
+    public Moeda getMoedaDeSaida() {
+        return moedaDeSaida;
     }
 
     @Override

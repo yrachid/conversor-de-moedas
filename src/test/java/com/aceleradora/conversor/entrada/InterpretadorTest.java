@@ -7,6 +7,8 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+import java.math.BigDecimal;
+
 import static com.aceleradora.conversor.Moeda.DOLAR_AMERICANO;
 import static com.aceleradora.conversor.Moeda.REAL_BRASILEIRO;
 import static org.hamcrest.core.Is.is;
@@ -26,9 +28,9 @@ public class InterpretadorTest {
 
     @Test
     public void constroiObjetoConversaoAPartirDaEntrada() throws Exception {
-        Conversao resultadoEsperado = new Conversao(new ValorMonetario(DOLAR_AMERICANO, 100.00), REAL_BRASILEIRO);
+        Conversao resultadoEsperado = new Conversao(new ValorMonetario(DOLAR_AMERICANO, new BigDecimal("100.00")), REAL_BRASILEIRO);
 
-        assertThat(interpretador.interpretar("USD100 BRL"), is(resultadoEsperado));
+        assertThat(interpretador.interpretar("USD100.00 BRL"), is(resultadoEsperado));
     }
 
     @Test

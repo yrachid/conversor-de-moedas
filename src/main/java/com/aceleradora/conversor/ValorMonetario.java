@@ -1,13 +1,20 @@
 package com.aceleradora.conversor;
 
+import java.math.BigDecimal;
+import java.util.Objects;
+
 public class ValorMonetario {
 
     private final Moeda moeda;
-    private final double valor;
+    private final BigDecimal valor;
 
-    public ValorMonetario(Moeda moeda, double valor) {
+    public ValorMonetario(Moeda moeda, BigDecimal valor) {
         this.moeda = moeda;
         this.valor = valor;
+    }
+
+    public BigDecimal getValorEmNuc() {
+       return valor.multiply(moeda.getEquivalenciaNuc());
     }
 
     @Override
@@ -15,8 +22,8 @@ public class ValorMonetario {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ValorMonetario that = (ValorMonetario) o;
-        return Double.compare(that.valor, valor) == 0 &&
-                moeda == that.moeda;
+        return moeda == that.moeda &&
+                Objects.equals(valor, that.valor);
     }
 
     @Override
