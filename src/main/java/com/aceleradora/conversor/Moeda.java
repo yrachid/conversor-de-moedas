@@ -8,15 +8,15 @@ public enum Moeda {
     DOLAR_AMERICANO("USD", new BigDecimal("1")),
     REAL_BRASILEIRO("BRL", new BigDecimal("0.26")),
     PESO_CHILENO("CLP", new BigDecimal("0.001493"));
+    
+    private String codigo;
+
+    private BigDecimal equivalenciaAoDolarAmericano;
 
     Moeda(String codigo, BigDecimal equivalenciaAoDolarAmericano) {
         this.codigo = codigo;
         this.equivalenciaAoDolarAmericano = equivalenciaAoDolarAmericano;
     }
-
-    private String codigo;
-
-    private BigDecimal equivalenciaAoDolarAmericano;
 
     public String getCodigo() {
         return codigo;
