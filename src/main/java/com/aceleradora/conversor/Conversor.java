@@ -2,6 +2,8 @@ package com.aceleradora.conversor;
 
 import com.aceleradora.conversor.entrada.Interpretador;
 
+import java.math.BigDecimal;
+
 import static java.math.RoundingMode.CEILING;
 
 public class Conversor {
@@ -17,7 +19,15 @@ public class Conversor {
 
         return new ValorMonetario(
                 conversao.getMoedaDeSaida(),
-                conversao.getValorEmNuc().divide(conversao.getMoedaDeSaida().getEquivalenciaNuc(), CEILING)
+                converteValorParaMoedaDeSaida(conversao)
         );
+    }
+
+    private BigDecimal converteValorParaMoedaDeSaida(Conversao conversao) {
+        BigDecimal valorOriginalEmDolarAmericano = conversao.getValorEmDolarAmericano();
+
+        BigDecimal taxaDeConversaoDaMoedaDeSaida = conversao.getMoedaDeSaida().getEquivalenciaAoDolarAmericano();
+
+        return valorOriginalEmDolarAmericano.divide(taxaDeConversaoDaMoedaDeSaida, CEILING);
     }
 }

@@ -13,8 +13,8 @@ public class Conversao {
         this.moedaDeSaida = moedaDeSaida;
     }
 
-    public BigDecimal getValorEmNuc() {
-       return valorDeEntrada.getValorEmNuc();
+    public BigDecimal getValorEmDolarAmericano() {
+       return valorDeEntrada.getValorEmDolarAmericano();
     }
 
     public Moeda getMoedaDeSaida() {

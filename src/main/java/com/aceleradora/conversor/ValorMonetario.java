@@ -13,8 +13,8 @@ public class ValorMonetario {
         this.valor = valor;
     }
 
-    public BigDecimal getValorEmNuc() {
-       return valor.multiply(moeda.getEquivalenciaNuc());
+    public BigDecimal getValorEmDolarAmericano() {
+       return valor.multiply(moeda.getEquivalenciaAoDolarAmericano());
     }
 
     @Override

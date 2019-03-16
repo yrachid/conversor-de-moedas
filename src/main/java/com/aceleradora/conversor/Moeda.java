@@ -9,21 +9,21 @@ public enum Moeda {
     REAL_BRASILEIRO("BRL", new BigDecimal("0.26")),
     PESO_CHILENO("CLP", new BigDecimal("0.001493"));
 
-    Moeda(String codigo, BigDecimal equivalenciaNuc) {
+    Moeda(String codigo, BigDecimal equivalenciaAoDolarAmericano) {
         this.codigo = codigo;
-        this.equivalenciaNuc = equivalenciaNuc;
+        this.equivalenciaAoDolarAmericano = equivalenciaAoDolarAmericano;
     }
 
     private String codigo;
 
-    private BigDecimal equivalenciaNuc;
+    private BigDecimal equivalenciaAoDolarAmericano;
 
     public String getCodigo() {
         return codigo;
     }
 
-    public BigDecimal getEquivalenciaNuc() {
-        return equivalenciaNuc;
+    public BigDecimal getEquivalenciaAoDolarAmericano() {
+        return equivalenciaAoDolarAmericano;
     }
 
     public static Moeda porCodigo(String codigo) throws Exception {
